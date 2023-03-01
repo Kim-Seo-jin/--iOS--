@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOS_Challenge_Concurrency" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="klO-lZ-Jbe">
+                                <rect key="frame" x="0.0" y="67" width="390" height="680"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j74-Fn-Or9">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="120"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Mk6-z1-tFM">
+                                                <rect key="frame" x="15" y="1.6666666666666643" width="150" height="117"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="120" id="baD-sp-HrX"/>
+                                                    <constraint firstAttribute="width" constant="150" id="qat-FT-1Fy"/>
+                                                </constraints>
+                                            </imageView>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IZQ-i0-JNG">
+                                                <rect key="frame" x="180" y="58" width="118.33333333333331" height="4"/>
+                                            </progressView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEP-Jr-Td7">
+                                                <rect key="frame" x="313.33333333333331" y="43" width="61.666666666666686" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Load"/>
+                                                <connections>
+                                                    <action selector="loadImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8YR-mH-wMa"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="IZQ-i0-JNG" firstAttribute="centerY" secondItem="Mk6-z1-tFM" secondAttribute="centerY" id="4Go-uc-qp8"/>
+                                            <constraint firstItem="KEP-Jr-Td7" firstAttribute="centerY" secondItem="Mk6-z1-tFM" secondAttribute="centerY" id="4U4-1K-KLj"/>
+                                            <constraint firstAttribute="bottom" secondItem="Mk6-z1-tFM" secondAttribute="bottom" id="852-vo-7lE"/>
+                                            <constraint firstItem="Mk6-z1-tFM" firstAttribute="leading" secondItem="j74-Fn-Or9" secondAttribute="leading" constant="15" id="8XL-9b-43o"/>
+                                            <constraint firstAttribute="trailing" secondItem="KEP-Jr-Td7" secondAttribute="trailing" constant="15" id="Aot-X7-fzs"/>
+                                            <constraint firstItem="IZQ-i0-JNG" firstAttribute="leading" secondItem="Mk6-z1-tFM" secondAttribute="trailing" constant="15" id="J4V-7T-zTg"/>
+                                            <constraint firstItem="Mk6-z1-tFM" firstAttribute="top" secondItem="j74-Fn-Or9" secondAttribute="top" id="dQe-BA-lRo"/>
+                                            <constraint firstItem="KEP-Jr-Td7" firstAttribute="leading" secondItem="IZQ-i0-JNG" secondAttribute="trailing" constant="15" id="gf5-AZ-gew"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="heA-47-cYw">
+                                        <rect key="frame" x="0.0" y="140" width="390" height="120"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qeT-fw-re8">
+                                                <rect key="frame" x="15" y="1.6666666666666643" width="150" height="117"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="5xN-aL-VBs"/>
+                                                    <constraint firstAttribute="height" constant="120" id="DFR-Qi-aMD"/>
+                                                </constraints>
+                                            </imageView>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="op8-5g-fP1">
+                                                <rect key="frame" x="180" y="58" width="118.33333333333331" height="4"/>
+                                            </progressView>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YrZ-ea-Wm2">
+                                                <rect key="frame" x="313.33333333333331" y="43" width="61.666666666666686" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Load"/>
+                                                <connections>
+                                                    <action selector="loadImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="auI-Cd-vsF"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="YrZ-ea-Wm2" firstAttribute="leading" secondItem="op8-5g-fP1" secondAttribute="trailing" constant="15" id="7NH-nd-SPG"/>
+                                            <constraint firstAttribute="trailing" secondItem="YrZ-ea-Wm2" secondAttribute="trailing" constant="15" id="HrC-CZ-IOx"/>
+                                            <constraint firstItem="qeT-fw-re8" firstAttribute="leading" secondItem="heA-47-cYw" secondAttribute="leading" constant="15" id="RN2-Xu-G90"/>
+                                            <constraint firstItem="op8-5g-fP1" firstAttribute="leading" secondItem="qeT-fw-re8" secondAttribute="trailing" constant="15" id="WAT-w2-Fea"/>
+                                            <constraint firstItem="YrZ-ea-Wm2" firstAttribute="centerY" secondItem="qeT-fw-re8" secondAttribute="centerY" id="hKQ-3z-7ZJ"/>
+                                            <constraint firstItem="qeT-fw-re8" firstAttribute="top" secondItem="heA-47-cYw" secondAttribute="top" id="jYv-lI-IXa"/>
+                                            <constraint firstAttribute="bottom" secondItem="qeT-fw-re8" secondAttribute="bottom" id="oe7-tT-1Kr"/>
+                                            <constraint firstItem="op8-5g-fP1" firstAttribute="centerY" secondItem="qeT-fw-re8" secondAttribute="centerY" id="qXo-6M-bXs"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ci-JL-uiP">
+                                        <rect key="frame" x="0.0" y="280" width="390" height="120"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jtV-WA-jy4">
+                                                <rect key="frame" x="15" y="1.6666666666666643" width="150" height="117"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="120" id="TZQ-Od-SJe"/>
+                                                    <constraint firstAttribute="width" constant="150" id="sBr-re-7c2"/>
+                                                </constraints>
+                                            </imageView>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YCM-0H-O17">
+                                                <rect key="frame" x="180" y="58" width="118.33333333333331" height="4"/>
+                                            </progressView>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QV0-DT-4nc">
+                                                <rect key="frame" x="313.33333333333331" y="43" width="61.666666666666686" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Load"/>
+                                                <connections>
+                                                    <action selector="loadImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xPp-Mi-mtT"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="jtV-WA-jy4" firstAttribute="leading" secondItem="7ci-JL-uiP" secondAttribute="leading" constant="15" id="3Gz-qN-r5Y"/>
+                                            <constraint firstAttribute="trailing" secondItem="QV0-DT-4nc" secondAttribute="trailing" constant="15" id="Bbl-Ax-F7b"/>
+                                            <constraint firstAttribute="bottom" secondItem="jtV-WA-jy4" secondAttribute="bottom" id="F5S-Yo-fM7"/>
+                                            <constraint firstItem="QV0-DT-4nc" firstAttribute="centerY" secondItem="jtV-WA-jy4" secondAttribute="centerY" id="LAE-hA-iXA"/>
+                                            <constraint firstItem="YCM-0H-O17" firstAttribute="centerY" secondItem="jtV-WA-jy4" secondAttribute="centerY" id="NGe-KE-8cI"/>
+                                            <constraint firstItem="jtV-WA-jy4" firstAttribute="top" secondItem="7ci-JL-uiP" secondAttribute="top" id="Tqi-2H-bN0"/>
+                                            <constraint firstItem="QV0-DT-4nc" firstAttribute="leading" secondItem="YCM-0H-O17" secondAttribute="trailing" constant="15" id="cVY-cu-1B4"/>
+                                            <constraint firstItem="YCM-0H-O17" firstAttribute="leading" secondItem="jtV-WA-jy4" secondAttribute="trailing" constant="15" id="gxR-p9-C7J"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1du-eR-62Q">
+                                        <rect key="frame" x="0.0" y="420" width="390" height="120"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="SQa-8k-FID">
+                                                <rect key="frame" x="15" y="1.6666666666666643" width="150" height="117"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="120" id="A7Z-ht-Wr7"/>
+                                                    <constraint firstAttribute="width" constant="150" id="lzZ-gS-lBk"/>
+                                                </constraints>
+                                            </imageView>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PcV-f8-tTZ">
+                                                <rect key="frame" x="180" y="58" width="118.33333333333331" height="4"/>
+                                            </progressView>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGZ-N9-cf6">
+                                                <rect key="frame" x="313.33333333333331" y="43" width="61.666666666666686" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Load"/>
+                                                <connections>
+                                                    <action selector="loadImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fc2-JY-SCg"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="PcV-f8-tTZ" firstAttribute="centerY" secondItem="SQa-8k-FID" secondAttribute="centerY" id="Gna-Ai-yny"/>
+                                            <constraint firstAttribute="trailing" secondItem="YGZ-N9-cf6" secondAttribute="trailing" constant="15" id="PI6-Sf-wOz"/>
+                                            <constraint firstAttribute="bottom" secondItem="SQa-8k-FID" secondAttribute="bottom" id="Rm5-I6-vag"/>
+                                            <constraint firstItem="PcV-f8-tTZ" firstAttribute="leading" secondItem="SQa-8k-FID" secondAttribute="trailing" constant="15" id="Udv-O3-muw"/>
+                                            <constraint firstItem="SQa-8k-FID" firstAttribute="leading" secondItem="1du-eR-62Q" secondAttribute="leading" constant="15" id="XW5-EE-1gJ"/>
+                                            <constraint firstItem="YGZ-N9-cf6" firstAttribute="leading" secondItem="PcV-f8-tTZ" secondAttribute="trailing" constant="15" id="fmC-eV-jOs"/>
+                                            <constraint firstItem="SQa-8k-FID" firstAttribute="top" secondItem="1du-eR-62Q" secondAttribute="top" id="rWq-QP-g4G"/>
+                                            <constraint firstItem="YGZ-N9-cf6" firstAttribute="centerY" secondItem="SQa-8k-FID" secondAttribute="centerY" id="vpY-Bt-Di2"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U9I-ji-qQY">
+                                        <rect key="frame" x="0.0" y="560" width="390" height="120"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="75X-gD-cXf">
+                                                <rect key="frame" x="15" y="1.6666666666666643" width="150" height="117"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="120" id="EP6-Ir-cib"/>
+                                                    <constraint firstAttribute="width" constant="150" id="w82-et-x8I"/>
+                                                </constraints>
+                                            </imageView>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bzn-a9-8Zd">
+                                                <rect key="frame" x="180" y="58" width="118.33333333333331" height="4"/>
+                                            </progressView>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpA-xo-cEB">
+                                                <rect key="frame" x="313.33333333333331" y="43" width="61.666666666666686" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Load"/>
+                                                <connections>
+                                                    <action selector="loadImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hfL-2I-Tnh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="75X-gD-cXf" secondAttribute="bottom" id="0Zz-0a-aoJ"/>
+                                            <constraint firstItem="mpA-xo-cEB" firstAttribute="leading" secondItem="bzn-a9-8Zd" secondAttribute="trailing" constant="15" id="5SJ-Tn-XAZ"/>
+                                            <constraint firstItem="bzn-a9-8Zd" firstAttribute="centerY" secondItem="75X-gD-cXf" secondAttribute="centerY" id="DPK-c4-aIV"/>
+                                            <constraint firstItem="bzn-a9-8Zd" firstAttribute="leading" secondItem="75X-gD-cXf" secondAttribute="trailing" constant="15" id="XL1-I5-qEr"/>
+                                            <constraint firstItem="75X-gD-cXf" firstAttribute="leading" secondItem="U9I-ji-qQY" secondAttribute="leading" constant="15" id="c8o-c5-F0U"/>
+                                            <constraint firstItem="75X-gD-cXf" firstAttribute="top" secondItem="U9I-ji-qQY" secondAttribute="top" id="nHm-gD-zFI"/>
+                                            <constraint firstAttribute="trailing" secondItem="mpA-xo-cEB" secondAttribute="trailing" constant="15" id="obh-t7-9An"/>
+                                            <constraint firstItem="mpA-xo-cEB" firstAttribute="centerY" secondItem="75X-gD-cXf" secondAttribute="centerY" id="pNG-SH-HWi"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyj-hH-Sk4">
+                                <rect key="frame" x="123" y="757" width="144" height="33"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Load All Images"/>
+                                <connections>
+                                    <action selector="loadAllImages:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jqd-jD-gUy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cyj-hH-Sk4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="OnB-Sc-f54"/>
+                            <constraint firstItem="klO-lZ-Jbe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bQe-3x-NdP"/>
+                            <constraint firstItem="klO-lZ-Jbe" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="k1W-bn-pIf"/>
+                            <constraint firstItem="klO-lZ-Jbe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="maO-UX-cXO"/>
+                            <constraint firstItem="cyj-hH-Sk4" firstAttribute="top" secondItem="klO-lZ-Jbe" secondAttribute="bottom" constant="10" id="oig-NK-2IE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cyj-hH-Sk4" secondAttribute="bottom" constant="20" id="rUs-HC-RFB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="image1" destination="Mk6-z1-tFM" id="bcU-La-HYy"/>
+                        <outlet property="image2" destination="qeT-fw-re8" id="y5M-aB-WY9"/>
+                        <outlet property="image3" destination="jtV-WA-jy4" id="Jgi-Oh-qW5"/>
+                        <outlet property="image4" destination="SQa-8k-FID" id="x9h-oW-RLW"/>
+                        <outlet property="image5" destination="75X-gD-cXf" id="uV3-nM-0Lo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="37" y="4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="photo" catalog="system" width="128" height="93"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
